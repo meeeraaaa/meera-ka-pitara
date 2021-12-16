@@ -1,0 +1,64 @@
+#include<iostream>
+using namespace std;
+class shape
+{
+public:
+    double x,y;
+    virtual void getdata()
+    {
+        cout<<"virtual"<<endl;
+    }
+    virtual void dispdata()
+    {
+        cout<<"virtual"<<endl;
+    }
+};
+class rectangle:public shape
+{
+public:
+    double area()
+    {
+        return (x*y);
+    }
+     void getdata()
+    {
+        cout<<"enter vals"<<endl;
+        cin>>x>>y;
+    }
+    void dispdata()
+    {
+        cout<<"dimension 1   "<<x<<"\tdimension 2   "<<y<<endl;
+    }
+};
+class triangle:public shape
+{
+public:
+    double area()
+    {
+        return (0.5*x*y);
+    }
+     void getdata()
+    {
+        cout<<"enter vals"<<endl;
+        cin>>x>>y;
+    }
+    void dispdata()
+    {
+        cout<<"dimension1:   "<<x<<"\tdimension2:   "<<y<<endl;
+    }
+};
+int main()
+{
+    triangle dd;
+    rectangle de;
+    dd.getdata();
+    double ta=dd.area();
+    de.getdata();
+    dd.dispdata();
+    double ra=de.area();
+   
+    de.dispdata();
+    cout<<"area of triangle "<<ta<<endl<<"area of rectangle "<<ra;
+   
+}
+
